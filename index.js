@@ -14,6 +14,26 @@ server.use(express.json());
 // index route - implementar una vista HTML con el motor de plantillas EJS con la documentación de la API
 
 server.get("/", (req, res) => {
+    server.get("/", (req, res) => {
+      res.send(`
+        <h1>CRUD de Tareas API</h1>
+        <p>API REST desarrollada con Express y persistencia en JSON.</p>
+
+        <h2>Endpoints disponibles</h2>
+
+        <ul>
+            <li>GET /api/v1/tasks</li>
+            <li>GET /api/v1/tasks/:id</li>
+            <li>POST /api/v1/tasks</li>
+            <li>PUT /api/v1/tasks/:id</li>
+            <li>DELETE /api/v1/tasks/:id</li>
+        </ul>
+
+        <h2>Health Check</h2>
+
+        <p>/health</p>
+    `);
+    });
     
 });
 
