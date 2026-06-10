@@ -1,20 +1,17 @@
-# CRUD JSON API
-
+CRUD JSON API
 API REST desarrollada con Node.js y Express para la gestión de tareas utilizando persistencia en un archivo JSON.
-
-## Tecnologías utilizadas
-
+Tecnologías utilizadas
 * Node.js
 * Express
 * JSON como almacenamiento persistente
 
-## Instalación
+Instalación
 
 ```bash
 npm install
 ```
 
-## Ejecución
+ Ejecución
 
 ```bash
 npm run dev
@@ -26,21 +23,21 @@ Servidor disponible en:
 http://localhost:3000
 ```
 
-## Endpoints
+Endpoints
 
-### Obtener todas las tareas
+ Obtener todas las tareas
 
 ```http
 GET /api/v1/tasks
 ```
 
-### Obtener una tarea por ID
+Obtener una tarea por ID
 
 ```http
 GET /api/v1/tasks/:id
 ```
 
-### Crear una tarea
+Crear una tarea
 
 ```http
 POST /api/v1/tasks
@@ -56,7 +53,7 @@ Body:
 }
 ```
 
-### Actualizar una tarea
+Actualizar una tarea
 
 ```http
 PUT /api/v1/tasks/:id
@@ -70,19 +67,12 @@ Body:
 }
 ```
 
-### Eliminar una tarea
+Eliminar una tarea
 
 ```http
 DELETE /api/v1/tasks/:id
 ```
-
-## Health Check
-
-```http
-GET /health
-```
-
-## Estructura de una tarea
+Estructura de una tarea
 
 ```json
 {
