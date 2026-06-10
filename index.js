@@ -14,27 +14,95 @@ server.use(express.json());
 // index route - implementar una vista HTML con el motor de plantillas EJS con la documentación de la API
 
 server.get("/", (req, res) => {
-    server.get("/", (req, res) => {
-      res.send(`
-        <h1>CRUD de Tareas API</h1>
-        <p>API REST desarrollada con Express y persistencia en JSON.</p>
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>CRUD API</title>
 
-        <h2>Endpoints disponibles</h2>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f6f9;
+                margin: 0;
+                padding: 40px;
+            }
 
-        <ul>
-            <li>GET /api/v1/tasks</li>
-            <li>GET /api/v1/tasks/:id</li>
-            <li>POST /api/v1/tasks</li>
-            <li>PUT /api/v1/tasks/:id</li>
-            <li>DELETE /api/v1/tasks/:id</li>
-        </ul>
+            .container {
+                max-width: 800px;
+                margin: auto;
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
 
-        <h2>Health Check</h2>
+            h1 {
+                color: #2563eb;
+                text-align: center;
+            }
 
-        <p>/health</p>
+            h2 {
+                color: #374151;
+                margin-top: 30px;
+            }
+
+            p {
+                color: #555;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            li {
+                background: #eef2ff;
+                margin: 10px 0;
+                padding: 12px;
+                border-left: 4px solid #2563eb;
+                border-radius: 4px;
+            }
+
+            .health {
+                background: #dcfce7;
+                color: #166534;
+                padding: 10px;
+                border-radius: 6px;
+                display: inline-block;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1> CRUD de Tareas API</h1>
+
+            <p>
+                API REST desarrollada con Node.js, Express y persistencia en JSON.
+            </p>
+
+            <h2>Endpoints disponibles</h2>
+
+            <ul>
+                <li>GET /api/v1/tasks</li>
+                <li>GET /api/v1/tasks/:id</li>
+                <li>POST /api/v1/tasks</li>
+                <li>PUT /api/v1/tasks/:id</li>
+                <li>DELETE /api/v1/tasks/:id</li>
+            </ul>
+
+            <h2>Health Check</h2>
+
+            <div class="health">
+                GET /health
+            </div>
+        </div>
+    </body>
+    </html>
     `);
-    });
-    
 });
 
 // health check

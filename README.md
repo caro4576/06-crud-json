@@ -1,65 +1,75 @@
-CRUD JSON API
-API REST desarrollada con Node.js y Express para la gestión de tareas utilizando persistencia en un archivo JSON.
-Tecnologías utilizadas
-* Node.js
-* Express
-* JSON como almacenamiento persistente
+CRUD de Tareas - Node.js y Express
 
-Instalación
+Este proyecto consiste en una API REST desarrollada con Node.js y Express que permite gestionar tareas utilizando un archivo JSON como almacenamiento.
+
+La aplicación permite:
+
+* Crear tareas.
+* Consultar todas las tareas.
+* Consultar una tarea por ID.
+* Modificar tareas existentes.
+* Eliminar tareas.
+
+Cada tarea contiene:
+
+* id
+* title
+* description
+* priority
+* completed
+* createdAt
+* updatedAt
+
+Para ejecutar el proyecto:
 
 ```bash
 npm install
-```
-
- Ejecución
-
-```bash
 npm run dev
 ```
 
-Servidor disponible en:
+El servidor se ejecuta en:
 
 ```text
 http://localhost:3000
 ```
 
-Endpoints
+Rutas disponibles:
 
- Obtener todas las tareas
+Obtener todas las tareas:
 
 ```http
 GET /api/v1/tasks
 ```
 
-Obtener una tarea por ID
+Obtener una tarea por ID:
 
 ```http
 GET /api/v1/tasks/:id
 ```
 
-Crear una tarea
+Crear una tarea:
 
 ```http
 POST /api/v1/tasks
 ```
 
-Body:
+Ejemplo de body:
 
 ```json
 {
   "title": "Nueva tarea",
-  "description": "Descripción de la tarea",
+  "description": "Descripción de ejemplo",
   "priority": "high"
 }
 ```
 
-Actualizar una tarea
+Actualizar una tarea:
 
 ```http
 PUT /api/v1/tasks/:id
 ```
 
-Body:
+Ejemplo de body:
 
 ```json
 {
@@ -67,21 +77,22 @@ Body:
 }
 ```
 
-Eliminar una tarea
+Eliminar una tarea:
 
 ```http
 DELETE /api/v1/tasks/:id
 ```
-Estructura de una tarea
 
-```json
-{
-  "id": "uuid",
-  "title": "Título",
-  "description": "Descripción",
-  "priority": "low",
-  "completed": false,
-  "createdAt": "2026-06-06T20:00:00.000Z",
-  "updatedAt": "2026-06-06T20:00:00.000Z"
-}
+Health Check:
+
+```http
+GET /health
+```
+
+Para probar los endpoints se utilizó Thunder Client.
+
+Los datos se almacenan en el archivo:
+
+```text
+src/data/tasks.json
 ```
